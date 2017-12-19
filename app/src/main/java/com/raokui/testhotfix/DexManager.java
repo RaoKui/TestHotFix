@@ -43,6 +43,11 @@ public class DexManager {
         }
     }
 
+    /**
+     * 修复方法
+     *
+     * @param realClazz
+     */
     private void fixClazz(Class realClazz) {
 
         Method[] methods = realClazz.getMethods();
@@ -69,5 +74,10 @@ public class DexManager {
 
     }
 
-    public native static void replace(Method wrongMethod, Method rightMethod) ;
+    public native static void replace(Method wrongMethod, Method rightMethod);
+
+    // Used to load the 'native-lib' library on application startup.
+    static {
+        System.loadLibrary("native-lib");
+    }
 }

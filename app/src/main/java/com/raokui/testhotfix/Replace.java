@@ -12,8 +12,8 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Replace {
-    String clazz();// 修复的class
+    String clazz();
 
-    String method();// 修复的方法
+    String method();
 
 }
